@@ -1,0 +1,637 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Navbar */
+
+nav {
+    position: fixed; /* Cố định navbar ở vị trí trên cùng */
+    top: 0;
+    left: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng của trang */
+    background-color: #333;
+    z-index: 1000; /* Đảm bảo navbar luôn nổi trên các thành phần khác */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ để tạo độ nổi */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Canh giữa các mục trong navbar */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Điều chỉnh nội dung phía dưới navbar */
+body {
+    margin-top: 60px; /* Chừa không gian phía trên cho navbar cố định */
+    overflow-y: scroll;
+}
+
+
+/* Banner */
+.banner {
+    background: url('../images/banner.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+
+.banner h1 {
+    font-size: 3em;
+}
+
+.banner p {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+/* Thanh tìm kiếm */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Featured categories */
+.featured-categories {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.featured-categories h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category {
+    width: 200px;
+
+    margin: 20px;
+}
+
+.category img {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.category p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Promotions */
+.promotions {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.promotions h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.promotion-item img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.promotion-item p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Customer reviews */
+.customer-reviews {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.customer-reviews h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.review {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+
+/* Vehicle list */
+
+.vehicle-list {
+    padding: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Tạo 4 cột cố định */
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+}
+
+.vehicle-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: left;
+    height: 100%; /* Chiều cao thẻ xe */
+    
+}
+
+.vehicle-item:hover{
+    box-shadow: 0 2px 7px gray;
+    transition: 100ms ease-in-out;
+    
+}
+
+.vehicle-item h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.vehicle-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.vehicle-item .price .tsrp {
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.vehicle-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.actions button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.smart-price{
+    color: red;
+    font-size: 1.3em;
+}
+
+.vehicle-item button:hover {
+    background-color: rgba(146, 23, 23, 0.948);
+}
+
+.list-img {
+    height: 200px; 
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* About us section */
+.about-us {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Filter section */
+.filter-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+.filter-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.filter-section form {
+    display: inline-block;
+}
+
+.filter-section label {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.filter-section select,
+.filter-section input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+.filter-section button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-section button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Chi tiết xe */
+.vehicle-detail-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.vehicle-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.vehicle-header p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.vehicle-gallery {
+    margin: 20px 0;
+}
+
+.vehicle-gallery .main-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.image-thumbnails img {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.image-thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+.vehicle-description {
+    margin: 30px 0;
+}
+
+.vehicle-description p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.vehicle-specs table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.vehicle-specs td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.vehicle-finance, .vehicle-test-drive {
+    margin: 40px 0;
+}
+
+button {
+    background-color: #FF4500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF6347;
+}
+
+.vehicle-gallery {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.main-image-container {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.main-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ tỷ lệ ảnh nhưng cắt phần dư thừa */
+    border-radius: 10px;
+    transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.image-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-thumbnails img {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-thumbnails img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.vehicle-list button a{
+    color: white;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.contact-form-container {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info {
+    margin-top: 50px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #555;
+}
+
+.map-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Images Slider */
+.container{
+    margin: 100px auto;
+    width: 70%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container img{
+    
+    height: 100%;
+    width: 30%;
+    object-fit:cover;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: ease-in-out 500ms;
+}
+
+.container img:hover{
+    width: 100%;
+}
+
+.container div{
+    width: 200px;
+}
+
+/* Description */
+
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    .banner h1 {
+        font-size: 2.5em;
+    }
+
+    .banner p {
+        font-size: 1.2em;
+    }
+
+    .search-bar input {
+        width: 80%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .vehicle-list h2 {
+        font-size: 2em;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.8em;
+    }
+
+    .banner p {
+        font-size: 1em;
+    }
+
+    .vehicle-item img {
+        height: 120px;
+    }
+
+    .vehicle-list h2 {
+        font-size: 1.8em;
+    }
+}
