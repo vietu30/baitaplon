@@ -6,90 +6,122 @@
     <meta name="description" content="Các dịch vụ bảo hành và bảo dưỡng dành cho khách hàng">
     <title>Dịch vụ - Đại lý ô tô</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
 
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html"><img src="/images/no-background-logo.png" alt="logo"></a>
-          <button class="navbar-toggler" id="toggleButton">
-            &#9776; <!-- Hamburger icon -->
-          </button>
-          <div class="offcanvas" id="offcanvasMenu">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title">Thông tin chi tiết</h5>
-              <button type="button" class="btn-close" id="closeButton">&times;</button>
+            <a class="navbar-brand" href="/index.html"><img src="/images/no-background-logo.png" alt="logo"></a>
+            <button class="navbar-toggler" id="toggleButton">
+                &#9776; <!-- Hamburger icon -->
+            </button>
+            <div class="offcanvas" id="offcanvasMenu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Thông tin chi tiết</h5>
+                    <button type="button" class="btn-close" id="closeButton">&times;</button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/index.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/inventory.html">Danh mục sản phẩm</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdownToggle" role="button">
+                                Thêm
+                            </a>
+                            <ul class="dropdown-menu" id="dropdownMenu">
+                                <li><a class="dropdown-item" href="/services.html">Dịch vụ</a></li>
+                                <li><a class="dropdown-item" href="/about.html">Về chúng tôi</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/contact.html">Liên hệ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="search-form">
+                        <input type="search" placeholder="Tìm kiếm" aria-label="Search">
+                        <button class="btn-search" type="submit">Tìm</button>
+                    </form>
+                </div>
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="/index.html">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/inventory.html">Danh mục sản phẩm</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownToggle" role="button">
-                    Thêm
-                  </a>
-                  <ul class="dropdown-menu" id="dropdownMenu">
-                    <li><a class="dropdown-item" href="/services.html">Dịch vụ</a></li>
-                    <li><a class="dropdown-item" href="/about.html">Về chúng tôi</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="/contact.html">Liên hệ</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="search-form">
-                <input type="search" placeholder="Search" aria-label="Search">
-                <button class="btn-search" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
         </div>
-      </nav>
-
+    </nav>
 
     <!-- Dịch vụ -->
     <section class="services-section">
-        <h2>Dịch vụ của chúng tôi</h2>
-        <p>Chúng tôi cung cấp đa dạng các dịch vụ hỗ trợ khách hàng, từ bảo hành đến bảo dưỡng định kỳ.</p>
+      <div class="services-header">
+          <h2>Dịch vụ của chúng tôi</h2>
+          <p>Chúng tôi cung cấp đa dạng các dịch vụ hỗ trợ khách hàng, từ bảo hành đến bảo dưỡng định kỳ.</p>
+      </div>
+      <div class="service-grid">
+          <div class="service-item">
+              <div class="service-icon">
+                  <i class="fas fa-shield-alt"></i> <!-- Biểu tượng bảo hành -->
+              </div>
+              <h3>Dịch vụ bảo hành</h3>
+              <p>Bảo hành xe lên đến 5 năm, bao gồm sửa chữa và thay thế phụ tùng chính hãng.</p>
+              <a href="#" class="learn-more">Tìm hiểu thêm</a>
+          </div>
+  
+          <div class="service-item">
+              <div class="service-icon">
+                  <i class="fas fa-wrench"></i> <!-- Biểu tượng bảo dưỡng -->
+              </div>
+              <h3>Bảo dưỡng định kỳ</h3>
+              <p>Gói bảo dưỡng định kỳ giúp xe luôn trong tình trạng tốt nhất, tiết kiệm chi phí.</p>
+              <a href="#" class="learn-more">Tìm hiểu thêm</a>
+          </div>
+  
+          <div class="service-item">
+              <div class="service-icon">
+                  <i class="fas fa-toolbox"></i> <!-- Biểu tượng sửa chữa -->
+              </div>
+              <h3>Dịch vụ sửa chữa</h3>
+              <p>Kỹ thuật viên giàu kinh nghiệm, sửa chữa xe chuyên nghiệp và hiệu quả.</p>
+              <a href="#" class="learn-more">Tìm hiểu thêm</a>
+          </div>
+  
+          <div class="service-item">
+              <div class="service-icon">
+                  <i class="fas fa-life-ring"></i> <!-- Biểu tượng cứu hộ -->
+              </div>
+              <h3>Dịch vụ cứu hộ</h3>
+              <p>Cứu hộ 24/7, hỗ trợ khách hàng trong các trường hợp khẩn cấp hoặc tai nạn.</p>
+              <a href="#" class="learn-more">Tìm hiểu thêm</a>
+          </div>
+  
+          <div class="service-item">
+              <div class="service-icon">
+                  <i class="fas fa-car"></i> <!-- Biểu tượng chăm sóc xe -->
+              </div>
+              <h3>Đánh bóng và chăm sóc xe</h3>
+              <p>Chăm sóc xe, bao gồm rửa xe, đánh bóng và làm mới nội thất.</p>
+              <a href="#" class="learn-more">Tìm hiểu thêm</a>
+          </div>
+  
+          <div class="service-item">
+              <div class="service-icon">
+                  <i class="fas fa-calculator"></i> <!-- Biểu tượng tư vấn tài chính -->
+              </div>
+              <h3>Tư vấn tài chính</h3>
+              <p>Tư vấn phương thức thanh toán phù hợp, hỗ trợ vay ngân hàng với lãi suất ưu đãi.</p>
+              <a href="#" class="learn-more">Tìm hiểu thêm</a>
+          </div>
+      </div>
+  </section>
+  
 
-        <div class="service-item">
-            <h3>Dịch vụ bảo hành</h3>
-            <p>Tất cả các dòng xe đều được bảo hành lên đến 5 năm với dịch vụ sửa chữa và thay thế phụ tùng chính hãng.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>Bảo dưỡng định kỳ</h3>
-            <p>Chúng tôi cung cấp gói bảo dưỡng định kỳ nhằm đảm bảo xe của bạn luôn trong tình trạng tốt nhất, giúp tiết kiệm chi phí sửa chữa về lâu dài.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>Dịch vụ sửa chữa</h3>
-            <p>Với đội ngũ kỹ thuật viên giàu kinh nghiệm, chúng tôi cam kết mang đến cho bạn dịch vụ sửa chữa xe chuyên nghiệp và hiệu quả.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>Dịch vụ cứu hộ</h3>
-            <p>Chúng tôi cung cấp dịch vụ cứu hộ 24/7 để hỗ trợ khách hàng trong các trường hợp khẩn cấp hoặc tai nạn.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>Đánh bóng và chăm sóc xe</h3>
-            <p>Chúng tôi có các gói chăm sóc xe, bao gồm rửa xe, đánh bóng và làm mới nội thất, giúp chiếc xe của bạn luôn sáng bóng như mới.</p>
-        </div>
-
-        <div class="service-item">
-            <h3>Tư vấn tài chính</h3>
-            <p>Đội ngũ tư vấn tài chính của chúng tôi sẽ giúp bạn lựa chọn phương thức thanh toán phù hợp, bao gồm trả góp và hỗ trợ vay ngân hàng với lãi suất ưu đãi.</p>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Đại lý ô tô. All rights reserved.</p>
     </footer>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
+
