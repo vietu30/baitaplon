@@ -1,66 +1,117 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thông tin về doanh nghiệp của chúng tôi, đội ngũ và sứ mệnh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Thông tin về doanh nghiệp của chúng tôi, đội ngũ và sứ mệnh"
+    />
     <title>Về chúng tôi - Đại lý ô tô</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">TTBD Brand</a>
-          <button class="navbar-toggler" id="toggleButton">
-            &#9776; <!-- Hamburger icon -->
-          </button>
-          <div class="offcanvas" id="offcanvasMenu">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title">Thông tin chi tiết</h5>
-              <button type="button" class="btn-close" id="closeButton">&times;</button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="/index.html">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/inventory.html">Danh mục sản phẩm</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownToggle" role="button">
-                    Thêm
-                  </a>
-                  <ul class="dropdown-menu" id="dropdownMenu">
-                    <li><a class="dropdown-item" href="/services.html">Dịch vụ</a></li>
-                    <li><a class="dropdown-item" href="/about.html">Về chúng tôi</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="/contact.html">Liên hệ</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <form class="search-form">
-                <input type="search" placeholder="Search" aria-label="Search">
-                <button class="btn-search" type="submit">Search</button>
-              </form>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"><img src="/images/no-background-logo.png" alt="logo"></a>
+        <button class="navbar-toggler" id="toggleButton">
+          &#9776;
+          <!-- Hamburger icon -->
+        </button>
+        <div class="offcanvas" id="offcanvasMenu">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Thông tin chi tiết</h5>
+            <button type="button" class="btn-close" id="closeButton">
+              &times;
+            </button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="/index.html">Trang chủ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/inventory.html">Danh mục sản phẩm</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropdownToggle"
+                  role="button"
+                >
+                  Thêm
+                </a>
+                <ul class="dropdown-menu" id="dropdownMenu">
+                  <li>
+                    <a class="dropdown-item" href="/services.html">Dịch vụ</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/about.html">Về chúng tôi</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/contact.html">Liên hệ</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="search-form">
+              <input type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn-search" type="submit">Search</button>
+            </form>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <!-- Thông tin doanh nghiệp -->
     <section class="about-us">
-        <h2>Về chúng tôi</h2>
-        <p>Đại lý ô tô chúng tôi được thành lập vào năm 2020 với mục tiêu cung cấp các dòng xe chất lượng, dịch vụ tuyệt vời và hỗ trợ tài chính linh hoạt cho khách hàng.</p>
-        <h3>Đội ngũ chuyên gia</h3>
-        <p>Chúng tôi tự hào có đội ngũ nhân viên tận tâm, chuyên nghiệp, từ cố vấn bán hàng đến kỹ thuật viên bảo trì.</p>
+      <div class="content-about">
+        <h1>VỀ ĐỘI NGŨ CỦA <span>TTBD BRAND</span></h1>
+        <p>CHĂM SÓC XE CHẤT LƯỢNG HƠN SỐ LƯỢNG!</p>
+        <div class="buttons">
+          <a href="#" class="call-btn">GỌI NGAY</a>
+          <a href="#" class="contact-btn">LIÊN HỆ VỚI CHÚNG TÔI</a>
+        </div>
+      </div>
+    </section>
+    <section class="team-member-section">
+      <div class="member-card">
+        <img src="./images/tranxuanbang.jpg" alt="Trần Xuân Bằng" />
+        <div class="member-info">
+          <p class="title-about">Mr.</p>
+          <h1>TRẦN XUÂN BẰNG</h1>
+          <p>
+            Bắt đầu từ năm 2015, khi nhận ra thị trường Việt Nam chưa phát triển
+            mạnh về ngành bán xe và một trung tâm Sale ô tô “đúng nghĩa”. Ông
+            Trần Xuân Bằng đã tìm tòi, vận dụng, nghiên cứu những kiến thức thực
+            tiễn áp dụng từ các trung tâm bán xe nổi tiếng ở nước ngoài thành
+            lập nên TTBD.
+          </p>
+          <p>
+            Với hơn 30 năm kinh nghiệm trong ngành sale xe ô tô tại thị trường
+            Việt Nam và Quốc tế, ông TRẦN XUÂN BẰNG là người sáng lập TTBD BRAND
+            và Học viện đào tạo học viên Detailing của UTC CAR. Ông cũng là
+            Trưởng Nhóm Đào tạo và Phát Triển các sản phẩm IGL Coatings tại thị
+            trường Vietnam.
+          </p>
+          <p>
+            Ông Trần Xuân Bằng sở hữu bằng Thạc sĩ về Giáo Dục và Lãnh Đạo,
+            chuyên đào tạo và hướng dẫn tận tình cho người yêu sale ô tô những
+            kiến thức nâng cao trong nhiều năm qua. Là người rất yêu xe và thấu
+            hiểu được nhu cầu chăm sóc xe của từng khách hàng, ông Bằng luôn
+            quan tâm đến chất lượng của từng sản phẩm, dịch vụ chăm sóc xe, đội
+            ngũ quản lý và nhân viên sale ô tô tại TTBD Brand.
+          </p>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Đại lý ô tô. All rights reserved.</p>
+      <p>&copy; 2024 Đại lý ô tô. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
