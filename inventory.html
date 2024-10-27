@@ -12,7 +12,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">TTBD Brand</a>
+          <a class="navbar-brand" href="/index.html"><img src="/images/no-background-logo.png" alt="logo"></a>
           <button class="navbar-toggler" id="toggleButton">
             &#9776; <!-- Hamburger icon -->
           </button>
@@ -53,24 +53,26 @@
 
     <!-- Bộ lọc -->
     <section class="filter-section">
-        <h2>Bộ lọc sản phẩm</h2>
-        <form>
-            <label for="brand">Hãng xe:</label>
-            <select id="brand">
-                <option value="toyota">Toyota</option>
-                <option value="honda">Honda</option>
-                <option value="ford">Ford</option>
-                <option value="mazda">Mazda</option>
-                <option value="bmw">BMW</option>
-            </select>
+      <h2>Bộ lọc sản phẩm</h2>
+      <form id="filterForm">
+          <label for="brand">Hãng xe:</label>
+          <select id="brand">
 
-            <label for="price">Khoảng giá:</label>
-            <input type="range" id="price" name="price" min="0" max="1000000">
-            <span id="price-output">500,000</span> VND
-
-            <button type="submit">Áp dụng bộ lọc</button>
-        </form>
-    </section>
+              <option value="all">Tất cả</option>
+              <option value="toyota">Toyota</option>
+              <option value="honda">Honda</option>
+              <option value="ford">Ford</option>
+              <option value="mazda">Mazda</option>
+              <option value="bmw">BMW</option>
+          </select>
+  
+          <label for="price">Khoảng giá:</label>
+          <input type="range" id="price" name="price" min="0" max="5000000000" step="500000">
+          <span id="price-output">500,000,000</span> VND
+  
+          <button type="submit">Áp dụng bộ lọc</button>
+      </form>
+  </section>
 
     <!-- Danh sách xe -->
     <div class="vehicle-list">
@@ -129,6 +131,13 @@
         <p>&copy; 2024 Đại lý ô tô. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script> 
 </body>
 </html>
+
+
+
+
+
+
+

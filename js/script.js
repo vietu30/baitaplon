@@ -1,117 +1,144 @@
-// Navbar Offcanvas Toggle
-(function() {
-  document.getElementById('toggleButton').addEventListener('click', function() {
-    document.getElementById('offcanvasMenu').classList.add('open');
-  });
-  
-  document.getElementById('closeButton').addEventListener('click', function() {
-    document.getElementById('offcanvasMenu').classList.remove('open');
-  });
-})();
+// Đảm bảo tất cả mã chạy sau khi DOM đã tải xong
+document.addEventListener("DOMContentLoaded", function() {
 
-// Dropdown Toggle
-(function() {
-  document.getElementById('dropdownToggle').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link behavior
+  // Navbar Offcanvas Toggle
+  (function() {
+    const toggleButton = document.getElementById('toggleButton');
+    const closeButton = document.getElementById('closeButton');
+    const offcanvasMenu = document.getElementById('offcanvasMenu');
+    
+    if (toggleButton && closeButton && offcanvasMenu) {
+      toggleButton.addEventListener('click', function() {
+        offcanvasMenu.classList.add('open');
+      });
+
+      closeButton.addEventListener('click', function() {
+        offcanvasMenu.classList.remove('open');
+      });
+    }
+  })();
+
+  // Dropdown Toggle
+  (function() {
+    const dropdownToggle = document.getElementById('dropdownToggle');
     const dropdownMenu = document.getElementById('dropdownMenu');
-    if (dropdownMenu.style.display === 'block') {
-      dropdownMenu.style.display = 'none';
-    } else {
-      dropdownMenu.style.display = 'block';
+    
+    if (dropdownToggle && dropdownMenu) {
+      dropdownToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+      });
     }
-  });
-})();
+  })();
 
-// Banner Carousel Functionality
-(function() {
-  let currentSlide = 0;
-  const slides = document.querySelectorAll(".banner-slider img");
-  const totalSlides = slides.length;
-  const slider = document.getElementById("slider");
-  const overlay = document.getElementById("bannerOverlay");
+  // Banner Carousel Functionality
+  (function() {
+    const slides = document.querySelectorAll(".banner-slider img");
+    const slider = document.getElementById("slider");
+    const overlay = document.getElementById("bannerOverlay");
 
-  let isDragging = false;
-  let startPos = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let animationID;
-  let autoSlideTimeout;
-  let lastInteractionTime = new Date().getTime();
-
-  function setSliderPosition() {
-    slider.style.transform = `translateX(${currentTranslate}px)`;
-  }
-
-  function touchStart(event) {
-    isDragging = true;
-    startPos = event.pageX;
-    animationID = requestAnimationFrame(animation);
-    overlay.style.cursor = "grabbing";
-    resetAutoSlide();
-  }
-
-  function touchEnd() {
-    isDragging = false;
-    cancelAnimationFrame(animationID);
-    overlay.style.cursor = "grab";
-
-    const movedBy = currentTranslate - prevTranslate;
-    if (movedBy < -100 && currentSlide < totalSlides - 3) {
-      currentSlide += 1;
-    } else if (movedBy > 100 && currentSlide > 0) {
-      currentSlide -= 1;
-    }
-
-    setPositionByIndex();
-    resetAutoSlide();
-  }
-
-  function touchMove(event) {
-    if (isDragging) {
-      const currentPosition = event.pageX;
-      currentTranslate = prevTranslate + currentPosition - startPos;
-    }
-  }
-
-  function animation() {
-    setSliderPosition();
-    if (isDragging) requestAnimationFrame(animation);
-  }
-
-  function setPositionByIndex() {
-    currentTranslate = (currentSlide * -33.33 * window.innerWidth) / 100;
-    prevTranslate = currentTranslate;
-    setSliderPosition();
-  }
-
-  function startAutoSlide() {
-    autoSlideTimeout = setTimeout(() => {
-      if (currentSlide < totalSlides - 3) {
-        currentSlide += 1;
-      } else {
-        currentSlide = 0;
+    if (slides.length && slider && overlay) {
+      let currentSlide = 0;
+      let isDragging = false;
+      let startPos = 0;
+      let currentTranslate = 0;
+      let prevTranslate = 0;
+      let autoSlideTimeout;
+      
+      function setSliderPosition() {
+        slider.style.transform = `translateX(${currentTranslate}px)`;
       }
-      setPositionByIndex();
-      startAutoSlide();
-    }, 5000);
-  }
 
-  function resetAutoSlide() {
-    clearTimeout(autoSlideTimeout);
-    lastInteractionTime = new Date().getTime();
+      function touchStart(event) {
+        isDragging = true;
+        startPos = event.pageX;
+        overlay.style.cursor = "grabbing";
+        resetAutoSlide();
+      }
 
-    const timeSinceLastInteraction = new Date().getTime() - lastInteractionTime;
-    if (timeSinceLastInteraction >= 5000) {
+      function touchEnd() {
+        isDragging = false;
+        overlay.style.cursor = "grab";
+        const movedBy = currentTranslate - prevTranslate;
+        currentSlide = movedBy < -100 && currentSlide < slides.length - 3 ? currentSlide + 1 : (movedBy > 100 && currentSlide > 0 ? currentSlide - 1 : currentSlide);
+        setPositionByIndex();
+        resetAutoSlide();
+      }
+
+      function touchMove(event) {
+        if (isDragging) currentTranslate = prevTranslate + event.pageX - startPos;
+      }
+
+      function setPositionByIndex() {
+        currentTranslate = (currentSlide * -33.33 * window.innerWidth) / 100;
+        prevTranslate = currentTranslate;
+        setSliderPosition();
+      }
+
+      function startAutoSlide() {
+        autoSlideTimeout = setTimeout(() => {
+          currentSlide = currentSlide < slides.length - 3 ? currentSlide + 1 : 0;
+          setPositionByIndex();
+          startAutoSlide();
+        }, 5000);
+      }
+
+      function resetAutoSlide() {
+        clearTimeout(autoSlideTimeout);
+        startAutoSlide();
+      }
+
       startAutoSlide();
-    } else {
-      startAutoSlide();
+      overlay.addEventListener("mousedown", touchStart);
+      overlay.addEventListener("mousemove", touchMove);
+      overlay.addEventListener("mouseup", touchEnd);
+      overlay.addEventListener("mouseleave", touchEnd);
+    }
+  })();
+
+  // Image Change in Inventory
+  window.changeImage = function(imageUrl) {
+    const mainImage = document.getElementById("main-image");
+    if (mainImage) {
+      mainImage.style.opacity = 0;
+      setTimeout(() => {
+        mainImage.src = imageUrl;
+        mainImage.style.opacity = 1;
+      }, 300);
     }
   }
 
-  startAutoSlide();
+  // Inventory Filter
+function applyFilter() {
+  const brand = document.getElementById("brand").value.toLowerCase();
+  const price = parseInt(document.getElementById("price").value, 10);
 
-  overlay.addEventListener("mousedown", touchStart);
-  overlay.addEventListener("mousemove", touchMove);
-  overlay.addEventListener("mouseup", touchEnd);
-  overlay.addEventListener("mouseleave", touchEnd);
-})();
+  document.getElementById("price-output").textContent = `${price.toLocaleString()} VND`;
+
+  const vehicles = document.querySelectorAll(".vehicle-item");
+  vehicles.forEach(vehicle => {
+    const vehicleBrand = vehicle.querySelector("h3").textContent.toLowerCase();
+    const vehiclePriceText = vehicle.querySelector(".smart-price").textContent.replace(/[^\d]/g, "");
+    const vehiclePrice = parseInt(vehiclePriceText, 10);
+
+    const brandMatch = (brand === "all") || vehicleBrand.includes(brand);
+    const priceMatch = vehiclePrice <= price;
+    vehicle.style.display = (brandMatch && priceMatch) ? "block" : "none";
+  });
+}
+
+const priceInput = document.getElementById("price");
+const filterForm = document.getElementById("filterForm");
+
+if (priceInput && filterForm) {
+  priceInput.addEventListener("input", function() {
+    document.getElementById("price-output").textContent = `${parseInt(priceInput.value, 10).toLocaleString()} VND`;
+  });
+
+  filterForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    applyFilter();
+  });
+}
+}
+)
