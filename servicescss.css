@@ -1,0 +1,231 @@
+header {
+  text-align: center;
+}
+
+.navbar-service {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.logo img {
+  margin-top: 15px;
+  width: 120px;
+  padding-right: 20px;
+  margin-left: 100px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+  margin-top: 13px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 10px;
+}
+
+.nav-links li a:hover {
+  color: #e74c3c;
+}
+
+.hero-section {
+  position: relative;
+  height: 700px;
+  background-image: url("/images/suachuarollroyce.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Lớp phủ màu đen với độ trong suốt */
+}
+
+.content-service {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-section h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* CSS cho phần Bảo Dưỡng & Sửa Chữa Ô Tô */
+.service-section {
+  display: flex;
+  margin: 40px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.service-section h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-content-service {
+  display: flex;
+  gap: 20px;
+}
+
+.left-service,
+.right-service {
+  flex: 1;
+}
+
+.image-container-service {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container-service img {
+  width: 700px;
+  height: auto;
+  display: block;
+}
+
+.image-overlay-service {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(231, 76, 60, 0.9); /* Lớp nền đỏ */
+  color: white;
+  text-align: center;
+}
+
+.image-overlay-service h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.image-overlay-service p {
+  font-size: 16px;
+}
+
+.image-overlay-service .date-service {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ffdddd;
+}
+
+.right-service .post-info-service {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.right-service img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.post-service {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.post-service img {
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.post-info-service h3 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #333;
+  max-width: 250px;
+}
+
+.post-info-service .date-service {
+  font-size: 12px;
+  color: #888;
+}
+.post-info-service a:hover {
+  color: red;
+}
+.h1-service {
+  padding-top: 20px;
+  padding-left: 60px;
+  margin-bottom: -40px;
+  position: relative;
+}
+.h1-service a:hover {
+  color: #d73532;
+}
+.h1-service::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
