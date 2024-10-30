@@ -27,7 +27,7 @@
               <a class="nav-link active" href="index.html">Trang chủ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="inventory.html">Danh mục sản phẩm</a>
+              <a class="nav-link" href="inventory.html" id="productCategoryLink">Danh mục sản phẩm</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownToggle" role="button">
@@ -51,81 +51,106 @@
   </nav>
 
     <!-- Banner -->
-    <section class="banner">
-      <div class="banner-slider" id="slider">
-        <img src="images/AZ-1_LB40_240110_0-1024x683.jpg" alt="Mẫu xe 1" />
-        <img src="images/Countach_240110_0-1024x683.jpg" alt="Mẫu xe 2" />
-        <img src="images/ER34_silhouette-1024x683.jpg" alt="Mẫu xe 3" />
-        <img
-          src="images/LB-Silhouette-WORKS-MURCIELAGO-GT-Evo00015-1-1024x683.jpg"
-          alt="Mẫu xe 4"
-        />
-        <img
-          src="images/LB-WORKS-AVENTADOR-Limited-Edition-Complete-Body-kit00009-1024x683.jpg"
-          alt="Mẫu xe 5"
-        />
-        <img
-          src="images/LB-WORKS-Lamborghini-GALLARDO-17-1-1.jpg"
-          alt="Mẫu xe 6"
-        />
-        <img
-          src="images/LB-WORKS-Lamborghini-HURACAN00004-1024x683.jpg"
-          alt="Mẫu xe 7"
-        />
-        <img src="images/NewLevelSequence.0328.jpg" alt="Mẫu xe 8" />
-        <img
-          src="images/LB-TRUCKS-UD-QUON-Body-Kit00001-1024x683.jpg"
-          alt="Mẫu xe 9"
-        />
+    <div class="carousel">
+      <!-- Slide 1 -->
+      <div class="carousel-slide active">
+          <video autoplay muted loop>
+              <source src="/images/toyota-video.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-content">
+              <h1>Đam Mê Ô Tô</h1>
+              <p>Khám phá thế giới ô tô với những mẫu xe đẹp, mạnh mẽ và hiện đại. Chúng tôi mang đến cho bạn những lựa chọn hoàn hảo để thỏa mãn đam mê lái xe.</p>
+          </div>
       </div>
-      <div class="banner-overlay" id="bannerOverlay"></div>
-    </section>
+  
+      <!-- Slide 2 -->
+      <div class="carousel-slide">
+          <video autoplay muted loop>
+              <source src="/images/corolla.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-content">
+              <h1>An Toàn Tối Đa</h1>
+              <p>Chúng tôi cam kết cung cấp những chiếc xe an toàn nhất trên thị trường. Tìm hiểu về công nghệ tiên tiến giúp bảo vệ bạn và gia đình trong mỗi chuyến đi.</p>
+          </div>
+      </div>
+  
+      <!-- Slide 3 -->
+      <div class="carousel-slide">
+          <video autoplay muted loop>
+              <source src="/images/supra-video.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-content">
+              <h1>Giá Trị Tốt Nhất</h1>
+              <p>Tìm kiếm chiếc xe mơ ước với mức giá hợp lý. Chúng tôi mang đến những ưu đãi hấp dẫn và dịch vụ khách hàng tận tâm để đảm bảo sự hài lòng của bạn.</p>
+          </div>
+      </div>
+  
+      <!-- Slide 4 -->
+      <div class="carousel-slide">
+          <video autoplay muted loop>
+              <source src="/images/kia-video.mp4" type="video/mp4">
+          </video>
+          <div class="carousel-content">
+              <h1>Dịch Vụ Chăm Sóc Khách Hàng</h1>
+              <p>Chúng tôi không chỉ bán xe, mà còn chăm sóc bạn. Đội ngũ chuyên viên tư vấn luôn sẵn sàng hỗ trợ bạn trong mọi nhu cầu, từ chọn xe đến bảo trì sau bán hàng.</p>
+          </div>
+      </div>
+  
+      <div class="carousel-control prev" onclick="prevSlide()">&#10094;</div>
+      <div class="carousel-control next" onclick="nextSlide()">&#10095;</div>
+  </div>
+  
+  <div class="carousel-indicators">
+      <span class="carousel-indicator active" onclick="setSlide(0)"></span>
+      <span class="carousel-indicator" onclick="setSlide(1)"></span>
+      <span class="carousel-indicator" onclick="setSlide(2)"></span>
+      <span class="carousel-indicator" onclick="setSlide(3)"></span> 
+  </div>
 
-    <!-- Thanh tìm kiếm -->
-    <section class="search-bar">
-        <input type="text" placeholder="Tìm kiếm theo tên xe, loại xe...">
-        <button>Tìm kiếm</button>
-    </section>
 
     <!-- Danh mục nổi bật -->
-    <section class="featured-categories">
-        <h2>Danh mục nổi bật</h2>
-        <div class="container">
-            <div >
-                <img src="images/suv.jpg" alt="Xe SUV">
-                <p>SUV</p>
-            </div>
-            <div >
-                <img src="images/sedan.jpg" alt="Xe Sedan">
-                <p>Sedan</p>
-            </div>
-            <div >
-                <img src="images/hatchback.jpg" alt="Xe Hatchback">
-                <p>Hatchback</p>
-            </div>
-            <div >
-                <img src="images/pickup.jpg" alt="Xe bán tải">
-                <p>Bán tải</p>
-            </div>
-        </div>
-    </section>
-
+    <section class="section">
+      <h2>GIÁ TRỊ CỐT LÕI CỦA THƯƠNG HIỆU</h2>
+  </section>
+  
+  <div class="content-container">
+      <div class="text-content">
+          <h3>TRẢI NGHIỆM LÁI CHÂN THỰC</h3>
+          <p>
+              Khoang lái PEUGEOT i-Cockpit® thế hệ mới với thiết kế công thái học, nổi bật là vô lăng D-cut nhỏ gọn và linh hoạt, đảm bảo sự tiện nghi và thoải mái khi cầm lái. Đằng sau vô lăng, người điều khiển hoàn toàn tập trung vào việc tận hưởng niềm vui lái xe.
+          </p>
+          <a href="/driveschedule.html" class="cta-button">ĐẶT LỊCH LÁI THỬ</a>
+      </div>
+  
+      <div class="car-image">
+          <img src="/images/image-screen-index.jpg" alt="New 408 Car">
+      </div>
+  </div>
+  
     <!-- Chương trình khuyến mãi -->
+    <h2 style="font-size: 30px; text-align: center; margin: 30px 0;">CHƯƠNG TRÌNH KHUYẾN MÃI</h2>
     <section class="promotions">
-        <h2>Chương trình khuyến mãi</h2>
         <div class="promotion-item">
             <img src="images/promo1.jpg" alt="Ưu đãi 1">
             <p>Giảm giá lên đến 20% cho mẫu xe mới.</p>
         </div>
-    </section>
 
-    <!-- Đánh giá từ khách hàng -->
-    <section class="customer-reviews">
-        <h2>Đánh giá từ khách hàng</h2>
-        <div class="review">
-            <p>"Dịch vụ tuyệt vời, tôi đã tìm được chiếc xe mơ ước!" - Nguyễn Văn A</p>
+        <div class="promotion-item">
+          <img src="images/toyota_exchange.jpg" alt="Ưu đãi 1">
+          <p>Thu xe cũ đổi xe mới.</p>
+        </div>
+
+        <div class="promotion-item">
+          <img src="images/toyota_fest.jpg" alt="Ưu đãi 1">
+          <p>Toyota festival.</p>
+        </div>
+
+        <div class="promotion-item">
+          <img src="images/toyota_tour.jpg" alt="Ưu đãi 1">
+          <p>Toyota fest.</p>
         </div>
     </section>
+
 
     <footer>
         <p>&copy; 2024 Đại lý ô tô. All rights reserved.</p>

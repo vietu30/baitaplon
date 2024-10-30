@@ -1,4 +1,4 @@
-// Đảm bảo tất cả mã chạy sau khi DOM đã tải xong
+// Ensure all scripts run after DOM has loaded
 document.addEventListener("DOMContentLoaded", function() {
 
   // Navbar Offcanvas Toggle
@@ -31,69 +31,42 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   })();
 
-  // Banner Carousel Functionality
-  (function() {
-    const slides = document.querySelectorAll(".banner-slider img");
-    const slider = document.getElementById("slider");
-    const overlay = document.getElementById("bannerOverlay");
+  // Carousel Functionality
+  (function initCarousel() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.carousel-indicator');
 
-    if (slides.length && slider && overlay) {
-      let currentSlide = 0;
-      let isDragging = false;
-      let startPos = 0;
-      let currentTranslate = 0;
-      let prevTranslate = 0;
-      let autoSlideTimeout;
-      
-      function setSliderPosition() {
-        slider.style.transform = `translateX(${currentTranslate}px)`;
-      }
-
-      function touchStart(event) {
-        isDragging = true;
-        startPos = event.pageX;
-        overlay.style.cursor = "grabbing";
-        resetAutoSlide();
-      }
-
-      function touchEnd() {
-        isDragging = false;
-        overlay.style.cursor = "grab";
-        const movedBy = currentTranslate - prevTranslate;
-        currentSlide = movedBy < -100 && currentSlide < slides.length - 3 ? currentSlide + 1 : (movedBy > 100 && currentSlide > 0 ? currentSlide - 1 : currentSlide);
-        setPositionByIndex();
-        resetAutoSlide();
-      }
-
-      function touchMove(event) {
-        if (isDragging) currentTranslate = prevTranslate + event.pageX - startPos;
-      }
-
-      function setPositionByIndex() {
-        currentTranslate = (currentSlide * -33.33 * window.innerWidth) / 100;
-        prevTranslate = currentTranslate;
-        setSliderPosition();
-      }
-
-      function startAutoSlide() {
-        autoSlideTimeout = setTimeout(() => {
-          currentSlide = currentSlide < slides.length - 3 ? currentSlide + 1 : 0;
-          setPositionByIndex();
-          startAutoSlide();
-        }, 5000);
-      }
-
-      function resetAutoSlide() {
-        clearTimeout(autoSlideTimeout);
-        startAutoSlide();
-      }
-
-      startAutoSlide();
-      overlay.addEventListener("mousedown", touchStart);
-      overlay.addEventListener("mousemove", touchMove);
-      overlay.addEventListener("mouseup", touchEnd);
-      overlay.addEventListener("mouseleave", touchEnd);
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
     }
+
+    function prevSlide() {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    function setSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    setInterval(nextSlide, 5000); 
+
+    
+    window.prevSlide = prevSlide;
+    window.nextSlide = nextSlide;
+    window.setSlide = setSlide;
   })();
 
   // Image Change in Inventory
@@ -104,41 +77,94 @@ document.addEventListener("DOMContentLoaded", function() {
       setTimeout(() => {
         mainImage.src = imageUrl;
         mainImage.style.opacity = 1;
-      }, 300);
+      }, 500); 
     }
-  }
+  };
 
   // Inventory Filter
-function applyFilter() {
-  const brand = document.getElementById("brand").value.toLowerCase();
-  const price = parseInt(document.getElementById("price").value, 10);
+  (function() {
+    function applyFilter() {
+      const brand = document.getElementById("brand").value.toLowerCase();
+      const price = parseInt(document.getElementById("price").value, 10) || Infinity; // Default to Infinity if NaN
 
-  document.getElementById("price-output").textContent = `${price.toLocaleString()} VND`;
+      document.getElementById("price-output").textContent = `${price.toLocaleString()} VND`;
 
-  const vehicles = document.querySelectorAll(".vehicle-item");
-  vehicles.forEach(vehicle => {
-    const vehicleBrand = vehicle.querySelector("h3").textContent.toLowerCase();
-    const vehiclePriceText = vehicle.querySelector(".smart-price").textContent.replace(/[^\d]/g, "");
-    const vehiclePrice = parseInt(vehiclePriceText, 10);
+      const vehicles = document.querySelectorAll(".vehicle-item");
+      vehicles.forEach(vehicle => {
+        const vehicleBrand = vehicle.querySelector("h3").textContent.toLowerCase();
+        const vehiclePriceText = vehicle.querySelector(".smart-price").textContent.replace(/[^\d]/g, "");
+        const vehiclePrice = parseInt(vehiclePriceText, 10);
 
-    const brandMatch = (brand === "all") || vehicleBrand.includes(brand);
-    const priceMatch = vehiclePrice <= price;
-    vehicle.style.display = (brandMatch && priceMatch) ? "block" : "none";
-  });
+        const brandMatch = (brand === "all") || vehicleBrand.includes(brand);
+        const priceMatch = vehiclePrice <= price;
+        vehicle.style.display = (brandMatch && priceMatch) ? "block" : "none";
+      });
+    }
+
+    const priceInput = document.getElementById("price");
+    const filterForm = document.getElementById("filterForm");
+
+    if (priceInput && filterForm) {
+      priceInput.addEventListener("input", function() {
+        document.getElementById("price-output").textContent = `${parseInt(priceInput.value, 10).toLocaleString()} VND`;
+      });
+
+      filterForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        applyFilter();
+      });
+    }
+  })();
+
+});
+
+//Schedule Drive
+const cities = [
+  "Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Hải Phòng", "Cần Thơ",
+  "Nha Trang", "Huế", "Đà Lạt", "Vũng Tàu", "Bắc Ninh",
+  "Thành phố Thủ Đức", "Quảng Ninh", "Nam Định", "Ninh Bình",
+  "Thái Nguyên", "Hưng Yên", "Kiên Giang", "Long An", "An Giang",
+  "Hà Tĩnh", "Lâm Đồng", "Sóc Trăng", "Bến Tre", "Tiền Giang",
+  // Thêm các thành phố khác nếu cần
+];
+
+function showSuggestions() {
+const value = document.getElementById("searchLocation").value;
+const suggestionList = document.getElementById("suggestionList");
+suggestionList.innerHTML = ""; 
+
+if (value) {
+const filteredCities = cities.filter(city =>
+  city.toLowerCase().startsWith(value.toLowerCase())
+);
+
+filteredCities.forEach(city => {
+  const li = document.createElement("li");
+  li.textContent = city;
+  li.onclick = () => selectCity(city);
+  suggestionList.appendChild(li);
+});
+}
 }
 
-const priceInput = document.getElementById("price");
-const filterForm = document.getElementById("filterForm");
-
-if (priceInput && filterForm) {
-  priceInput.addEventListener("input", function() {
-    document.getElementById("price-output").textContent = `${parseInt(priceInput.value, 10).toLocaleString()} VND`;
-  });
-
-  filterForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    applyFilter();
-  });
+function selectCity(city) {
+  document.getElementById("searchLocation").value = city;
+  document.getElementById("suggestionList").innerHTML = ""; 
 }
+
+function confirmRequest() {
+  const carModel = document.getElementById("carModel").value;
+  const title = document.getElementById("title").value;
+  const firstName = document.getElementById("firstName").value;
+  const lastName = document.getElementById("lastName").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+
+  if (!carModel || !title || !firstName || !lastName || !phone || !email) {
+      alert("Vui lòng điền đầy đủ thông tin bắt buộc.");
+      return;
+  }
+
+  alert(`Cảm ơn ${title} ${firstName} ${lastName}! Yêu cầu lái thử cho mẫu ${carModel} đã được ghi nhận.`);
+  document.getElementById("scheduleForm").reset();
 }
-)
