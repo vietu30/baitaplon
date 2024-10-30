@@ -334,7 +334,7 @@ body {
   justify-content: space-between;
   padding: 40px;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), 
-              url('/images/image-screen-index.jpg') center/cover no-repeat;
+              url('images/image-screen-index.jpg') center/cover no-repeat;
   color: white;
   height: 700px;
 }
@@ -516,7 +516,7 @@ body {
   margin-bottom: 20px;
 }
 .about-us {
-  background-image: url("./xemec.jpg");
+  background-image: url("images/xemec.jpg");
   background-size: cover;
   background-position: center;
   width: 100vw;
@@ -1108,7 +1108,7 @@ button:hover {
 .hero-section {
   position: relative;
   height: 100vh;
-  background-image: url("./background-image.jpg");
+  background-image: url("images/background-image.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
