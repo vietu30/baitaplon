@@ -1,0 +1,465 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Navbar */
+
+ .navbar {
+  background-color: #343a40;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  color: white;
+  z-index: 3;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.container-fluid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img{
+  width: 100px;
+}
+
+.navbar-brand{
+  height: 52.75px;
+}
+
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.offcanvas {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #343a40;
+  transition: right 0.3s ease-in-out;
+  color: white;
+  padding: 1rem;
+}
+
+.offcanvas.open {
+  right: 0;
+}
+
+.offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0.5rem 0;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #343a40;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  color: #e9ecef;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #495057;
+  color: white;
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.search-form input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #6c757d;
+}
+
+.btn-search {
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: #218838;
+}
+
+/* Điều chỉnh nội dung phía dưới navbar */
+body {
+  margin-top: 150px; /* Chừa không gian phía trên cho navbar cố định */
+  overflow-y: scroll;
+}
+
+/* Khac */
+
+.logo img {
+  margin-top: 1px;
+  width: 120px;
+  padding-right: 20px;
+  margin-left: 100px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+  margin-top: 13px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 10px;
+}
+
+.nav-links li a:hover {
+  color: #e74c3c;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-image: url("./background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Lớp phủ màu đen với độ trong suốt */
+}
+
+.content-service {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-section h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 30px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Nút cuộn xuống */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  opacity: 0.8; /* Trong suốt để không ảnh hưởng video */
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scroll-down:hover {
+  opacity: 1; /* Hiệu ứng khi rê chuột */
+}
+
+.scroll-down .arrow {
+  display: block;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.scroll-down p {
+  margin: 0;
+}
+
+
+.ad-container{
+  width: 100%;
+  background-color: #2b2e42;
+}
+
+.content-container{
+  display: flex;
+  width: 100%;
+}
+.column1{
+  width: calc(100% - 40% - 50px);
+  padding:0px 25px ;
+  color: white;
+}
+.pic-loader{
+  width: 40%;
+  display: flex;
+}
+.navbar button {
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #ff6347;
+}
+/* Main */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  width: 95%;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.section {
+  background-color: white;
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.section h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: black;
+  text-transform: uppercase;
+}
+
+.section label {
+  display: block;
+  font-size: small;
+  color:rgb(92, 92, 92);
+}
+
+.section input[type="text"],
+.section input[type="email"],
+.section input[type="tel"],
+.section select,
+.section textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.search-section input[type="radio"] {
+  margin-right: 5px;
+}
+
+
+.section button {
+  padding: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  float:right;
+}
+
+.section button:hover {
+  background-color: rgb(186, 31, 31);
+}
+
+.combined-section {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  gap: 10px;
+}
+
+.options{
+  margin: 10px 0px;
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0;
+  margin-top: 70px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.suggestions li {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+.suggestions li:last-child {
+  border-bottom: none;
+}
+.suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 110px;
+}
+
+footer p {
+  margin: 0;
+}

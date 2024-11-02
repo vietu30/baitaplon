@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/css/style.css" /> -->
+    <title>Liên Hệ Với Chúng Tôi</title>
+    <style>      
+    /* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Navbar */
+
+.navbar {
+  background-color: #343a40;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  color: white;
+  z-index: 3;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.container-fluid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img{
+  width: 100px;
+}
+
+.navbar-brand{
+  height: 52.75px;
+}
+
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.offcanvas {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #343a40;
+  transition: right 0.3s ease-in-out;
+  color: white;
+  padding: 1rem;
+}
+
+.offcanvas.open {
+  right: 0;
+}
+
+.offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0.5rem 0;
+}
+
+.nav-item a:hover {
+  width: 100%;
+  letter-spacing: 3px;
+  transition-duration: 0.5s;
+}
+
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #343a40;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  color: #e9ecef;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #495057;
+  color: white;
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.search-form input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #6c757d;
+}
+
+.btn-search {
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: #218838;
+}
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #333;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .header-contact::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2); /* Độ trong suốt của lớp phủ */
+        z-index: 1; /* Đảm bảo lớp phủ nằm trên ảnh nền */
+      }
+
+      .header-contact {
+        background-image: url("images/contact_us_hero_01.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        z-index: 1;
+        opacity: 0; /* Ẩn background ban đầu */
+        transition: opacity 2s ease-in-out; /* Làm mờ background từ từ hiện lên */
+      }
+      .header-contact.visible {
+        opacity: 1; /* Hiện background sau khi trang tải */
+      }
+      .header-contact h1 {
+        font-size: 3.5vh; /* Dùng đơn vị vh để đảm bảo tỷ lệ phù hợp với chiều cao màn hình */
+        letter-spacing: 0.2vw; /* Đơn vị vw để chữ co giãn theo chiều rộng màn hình */
+        position: absolute;
+        top: 33vh; /* Điều chỉnh vị trí theo chiều cao màn hình */
+        font-weight: 300;
+        text-transform: uppercase;
+        z-index: 2;
+        left: 9vw; /* Vị trí từ bên trái tính theo phần trăm chiều rộng */
+        transform: translateX(-100%); /* Bắt đầu từ bên ngoài màn hình */
+        opacity: 0; /* Ẩn ban đầu */
+        animation: slideInFromLeft 2s forwards ease-in-out 0.5s; /* Animation xuất hiện từ trái qua */
+      }
+      @keyframes slideInFromLeft {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* Keyframes cho animation xuất hiện mờ dần */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .header-contact h2 {
+        font-size: 10vh; /* Tỷ lệ theo chiều cao màn hình */
+        position: absolute;
+        top: 39vh; /* Điều chỉnh vị trí theo chiều cao */
+        font-weight: bold;
+        z-index: 2;
+        text-transform: uppercase;
+        left: 9vw; /* Căn lề trái theo tỷ lệ phần trăm */
+        transform: translateX(-100%); /* Bắt đầu từ bên ngoài màn hình */
+        opacity: 0; /* Ẩn ban đầu */
+        animation: slideInFromLeft 2s forwards ease-in-out 0.5s; /* Hiệu ứng trượt từ trái qua */
+      }
+
+      .intro {
+        padding: 50px;
+        text-align: center;
+        font-size: 20px;
+      }
+      .info-section {
+        display: flex;
+        justify-content: space-around;
+        margin: 50px 0;
+        padding: 0 20px;
+      }
+      .info-box {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 22%;
+        text-align: center;
+      }
+      .info-box h3 {
+        margin-bottom: 15px;
+        font-size: 29px;
+        color: #000;
+      }
+      .info-box p {
+        font-size: 18px;
+      }
+      .form-section {
+        background-color: #fff;
+        padding: 50px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .form-section form {
+        max-width: 600px;
+        margin: auto;
+      }
+      .form-section input,
+      .form-section textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .form-section input[type="submit"] {
+        background-color: #000;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+      .form-section input[type="submit"]:hover {
+        background-color: #444;
+      }
+      .text {
+        float: left;
+        width: 370px;
+      }
+      .anh img {
+        object-fit: cover;
+        float: right;
+        width: 100%;
+        border-radius: 8px; /* Bo góc nhẹ ảnh cho đẹp */
+
+        height: 500px;
+      }
+      .anh {
+        margin-left: 140px;
+        margin-right: 130px;
+
+      }
+      .thung {
+        margin-left: 130px;
+      }
+      .Automobili {
+        margin-top: 20px;
+        font-size: 16px;
+        color: rgb(121, 121, 121);
+      }
+      .thung h2,
+      .thung h3 {
+        font-size: 29px;
+      }
+      .hl h3 {
+        margin-left: 130px;
+        margin-top: 130px;
+        font-size: 29px;
+      }
+      .he {
+        display: flex;
+        margin-top: 150px;
+      }
+
+      .d1 {
+        display: flex;
+        justify-content: space-between;
+        width: 800px;
+        margin: 50px 350px 0;
+      }
+      .d2 {
+        display: flex;
+        justify-content: space-between;
+        width: 800px;
+        margin: 50px 350px 0;
+      }
+      .d1 h3 {
+        margin-bottom: 40px;
+        font-size: 29px;
+      }
+      .d2 h3 {
+        margin-bottom: 40px;
+        font-size: 29px;
+      }
+      .d1 p {
+        color: rgb(121, 121, 121);
+      }
+      .d2 p {
+        color: rgb(121, 121, 121);
+      }
+      .mess h2 {
+        margin-left: 130px;
+        margin-top: 130px;
+        font-size: 29px;
+      }
+      .send {
+        margin-left: 130px;
+        width: 330px;
+        color: rgb(121, 121, 121);
+      }
+      .mess {
+        margin-bottom: 20px;
+        display: flex;
+        
+      }
+
+      /* Định dạng cho phần icon tròn */
+      .icon-container {
+        display: flex;
+        align-items: center;
+        margin-left: 130px;
+        padding-bottom: 30px;
+        cursor: pointer; /* Thêm con trỏ tay khi hover */
+      }
+
+      .circle-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; /* Tạo hình tròn */
+        background-color: transparent; /* Nền trong suốt */
+        border: 1px solid #000000; /* Viền màu nâu */
+        position: relative;
+        margin-right: 20px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
+      }
+
+      .plus {
+        color: #000000; /* Dấu cộng màu nâu */
+        font-size: 30px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: color 0.3s ease; /* Hiệu ứng chuyển màu chữ */
+        font-weight: lighter;
+      }
+
+      /* Hiệu ứng hover cho icon hình tròn dấu cộng */
+      .circle-icon:hover {
+        background-color: #000; /* Nền đen khi hover */
+      }
+
+      .circle-icon:hover .plus {
+        color: #fff; /* Dấu cộng thành màu trắng khi hover */
+      }
+
+      .message-label {
+        color: #000000;
+        font-size: 20px;
+        font-weight:300;
+        margin-top: 20px;
+      }
+
+      /* Form */
+      .message-form {
+        margin-top: 20px;
+        margin-left: 130px;
+        width: 700px;
+        opacity: 0; /* Bắt đầu với độ mờ */
+        transition: opacity 0.5s ease; /* Hiệu ứng hiển thị từ từ */
+      }
+
+      .message-form.show {
+        opacity: 1; /* Hiển thị form khi có class .show */
+      }
+
+      .input-container {
+        display: flex; /* Sắp xếp các ô input theo hàng */
+        gap: 20px; /* Khoảng cách giữa các ô */
+      }
+
+      .input-container input,
+      .input-container textarea {
+        flex: 1; /* Tự động điều chỉnh kích thước */
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .input-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none; /* Bỏ viền */
+  border-bottom: 2px solid #888888; /* Chỉ có dòng kẻ dưới */
+  box-sizing: border-box;
+  font-size: 20px;
+  outline: none; /* Bỏ viền xanh khi focus */
+}
+.input-container input::placeholder {
+  color: rgba(0, 0, 0, 0.5); /* Màu chữ placeholder mờ */
+}
+
+/* Hiệu ứng hover cho các trường input */
+.input-container input:hover {
+  border-bottom-color: #000000; /* Màu sáng hơn khi hover */
+}
+
+      .input-container input::placeholder,
+      .input-container textarea::placeholder {
+        color: rgba(0, 0, 0, 0.5); /* Màu chữ placeholder mờ */
+      }
+
+      .input-container textarea {
+        resize: none; /* Tắt khả năng thay đổi kích thước của textarea */
+      }
+
+      .message-form button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .message-form button:hover {
+        background-color: #555;
+      }
+      /* Định dạng cho phần ô tích */
+      .radio-container {
+        margin-bottom: 20px;
+        font-weight: 300;
+      }
+
+      .radio-container label {
+        margin-right: 15px;
+        font-weight: bold;
+      }
+
+      .circle-radio {
+        color: #888888;
+        display: inline-flex;
+        align-items: center;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      /* Ẩn ô radio mặc định */
+      input[type="radio"] {
+        display: none;
+      }
+
+      /* Định dạng cho phần checkmark */
+      input[type="radio"] + label:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 8px;
+        background-color: transparent;
+        border: 2px solid #000000; /* Viền màu nâu */
+        border-radius: 50%; /* Tạo hình tròn */
+        transition: background-color 0.3s, border-color 0.3s; /* Hiệu ứng chuyển màu */
+      }
+
+      /* Khi radio được chọn */
+      input[type="radio"]:checked + label:before {
+        background-color: #888888; /* Tô màu khi được chọn */
+      }
+
+      /* Hiệu ứng hover cho checkmark */
+      .circle-radio:hover input[type="radio"] + label:before {
+        background-color: rgba(
+          139,
+          69,
+          19,
+          0.3
+        ); /* Màu nền nhạt hơn khi hover */
+        border-color: #000000; /* Giữ viền màu nâu khi hover */
+      }
+
+      /* Hiệu ứng cho dấu tích khi radio được chọn */
+      input[type="radio"]:checked + label:after {
+        content: "✔"; /* Dấu tích */
+        color: #fff; /* Màu trắng */
+        position: absolute;
+        left: 5px;
+        top: 2px;
+        font-size: 16px; /* Kích thước cho dấu tích */
+      }
+
+      /* Hiệu ứng hover cho dấu tích */
+      .circle-radio:hover input[type="radio"]:checked + label:after {
+        color: #000000; /* Chuyển màu thành đen khi hover */
+      }
+
+      /* Định dạng cho ô nhập liệu */
+      .input-container {
+        display: flex; /* Sắp xếp các ô input theo hàng */
+        gap: 20px; /* Khoảng cách giữa các ô */
+      }
+
+      /* Kích thước cho Name và Phone Number */
+      .name-phone {
+        display: flex; /* Sắp xếp Name và Phone Number theo hàng */
+        gap: 10px; /* Khoảng cách giữa các ô */
+        flex: 1; /* Tự động điều chỉnh kích thước */
+      }
+
+      .name-phone input {
+        flex: 1; /* Chiều rộng cho các ô */
+        padding: 10px; /* Padding cho ô nhập liệu */
+        border: none; /* Không có đường viền */
+        border-bottom: 2px solid #888888; /* Dòng kẻ dưới cùng màu nâu */
+        outline: none; /* Bỏ viền mặc định khi ô được chọn */
+        transition: border-bottom-color 0.3s ease; /* Hiệu ứng chuyển màu */
+        font-size: 20px;
+      }
+
+      /* Hiệu ứng hover cho ô nhập liệu */
+      .name-phone input:hover {
+        border-bottom-color: #000000; /* Màu sáng hơn khi hover (màu nâu nhạt hơn) */
+      }
+
+      /* Kích thước cho Message */
+      .message {
+        margin-top: 20px; /* Khoảng cách trên phần Message */
+      }
+
+      .message textarea {
+        width: 100%; /* Đảm bảo textarea chiếm 100% chiều rộng */
+        padding: 10px; /* Padding cho textarea */
+        border: none; /* Không có đường viền */
+        border-bottom: 2px solid #888888; /* Dòng kẻ dưới cùng màu nâu */
+        resize: none; /* Tắt khả năng thay đổi kích thước của textarea */
+        outline: none; /* Bỏ viền mặc định khi ô được chọn */
+        transition: border-bottom-color 0.3s ease; /* Hiệu ứng chuyển màu */
+        font-size: 20px;
+      }
+
+      /* Hiệu ứng hover cho textarea */
+      .message textarea:hover {
+        border-bottom-color: #000000; /* Màu sáng hơn khi hover */
+      }
+
+      /* Định dạng placeholder */
+      .name-phone input::placeholder,
+      .message textarea::placeholder {
+        color: rgba(0, 0, 0, 0.5); /* Màu chữ placeholder mờ */
+      }
+
+      /* Định dạng nút Submit */
+      .message-form button {
+        padding: 10px 20px; /* Padding cho nút */
+        background-color: #333; /* Màu nền */
+        color: white; /* Màu chữ */
+        border: none; /* Không có đường viền */
+        cursor: pointer; /* Con trỏ tay khi hover */
+        margin-top: 10px; /* Khoảng cách trên nút */
+        margin-bottom: 10px;
+      }
+
+      .message-form button:hover {
+        background-color: #555; /* Màu nền khi hover */
+      }
+
+      /* Định dạng cho form */
+      .message-form {
+        margin-top: 20px;
+        margin-left: 130px;
+        width: 700px; /* Chiều rộng của form */
+        opacity: 0; /* Bắt đầu với độ mờ */
+        transition: opacity 0.5s ease; /* Hiệu ứng hiển thị từ từ */
+      }
+
+      .message-form.show {
+        opacity: 1; /* Hiển thị form khi có class .show */
+      }
+      .message-label:hover {
+        color: #888888;
+        transition: 0.7s;
+        letter-spacing: 5px;
+      }
+      .messpic {
+        margin-top: 130px;
+        margin-left: 130px;
+        object-fit: cover;
+        float: right;
+      }
+
+      .messpic img {
+        width: 100%; /* Ảnh chiếm toàn bộ chiều rộng của phần .messpic */
+        height: 350px; /* Đảm bảo ảnh giữ tỉ lệ */
+        border-radius: 8px; /* Bo góc nhẹ ảnh cho đẹp */
+        /* float: right; */
+        
+        
+      }
+      .messfull {
+        /* float: left; */
+        
+      }
+      .footer p{
+  float: left;
+  text-align: left;
+  margin-left: 130px;
+}
+.footer {
+  background-color: #333; /* Màu nền cho footer */
+  color: white; /* Màu chữ */
+  text-align: center; /* Canh giữa nội dung */
+  padding: 20px 0; /* Khoảng cách trên và dưới nội dung */
+  position: relative; /* Đảm bảo footer không bị chồng lên nội dung */
+  width: 100%; /* Chiều rộng chiếm toàn bộ màn hình */
+  bottom: 0; /* Đặt footer ở vị trí dưới cùng */
+}
+ 
+    </style>
+  </head>
+  <div>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html"
+          ><img src="images/no-background-logo.png" alt="logo"
+        /></a>
+        <button class="navbar-toggler" id="toggleButton">
+          &#9776;
+          <!-- Hamburger icon -->
+        </button>
+        <div class="offcanvas" id="offcanvasMenu">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Thông tin chi tiết</h5>
+            <button type="button" class="btn-close" id="closeButton">
+              &times;
+            </button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="/index.html"
+                  >Trang chủ</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/inventory.html"
+                  >Danh mục sản phẩm</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropdownToggle"
+                  role="button"
+                >
+                  Thêm
+                </a>
+                <ul class="dropdown-menu" id="dropdownMenu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/services.html"
+                      >Dịch vụ</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/about.html"
+                      >Về chúng tôi</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/contact.html"
+                      >Liên hệ</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="search-form">
+              <input type="search" placeholder="Search" aria-label="Search" />
+              <button class="btn-search" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="header-contact">
+      <h1>Liên Hệ Với Chúng Tôi</h1>
+      <h2>Chăm Sóc Khách Hàng</h2>
+    </div>
+    <div class="he">
+      <div class="thung">
+        <div class="text">
+          <h2>TOYOTA</h2>
+          <h3>CHĂM SÓC KHÁCH HÀNG</h3>
+          <p class="Automobili">
+            TTBD rất hân hạnh được hỗ trợ bạn:
+            
+            <br />
+            Nếu bạn không tìm thấy thông tin phù hợp với yêu cầu, vui lòng cuộn xuống và liên hệ với Trung tâm liên hệ khách hàng chuyên dụng của chúng tôi qua điện thoại hoặc biểu mẫu liên hệ.
+            <br>
+            Dịch vụ chăm sóc khách hàng của TTBD luôn chú trọng mang đến sự hài lòng tối đa. Với hệ thống bảo dưỡng, sửa chữa chuyên nghiệp và phụ tùng chính hãng, TTBD đảm bảo xe của bạn luôn hoạt động tốt. Đội ngũ kỹ thuật viên giàu kinh nghiệm cùng các kênh hỗ trợ trực tuyến giúp giải đáp thắc mắc nhanh chóng và hiệu quả. TTBD cam kết đồng hành cùng khách hàng sau khi mua xe, mang lại trải nghiệm tin cậy và hài lòng.
+          </p>
+        </p>
+
+        </div>
+      </div>
+      <div class="anh">
+        <img src="images/TOY_bZ4X_2022_HUB_VC_KV_14-1.webp" alt="" />
+      </div>
+    </div>
+    <div class="hl">
+      <h3>HÃY GỌI CHO CHÚNG TÔI QUA CÁC HOTLINE</h3>
+    </div>
+    <div class="d1">
+      <div class="inter">
+        <h3>QUỐC TẾ</h3>
+        <p>
+          HOTLINE: +39 051 9597282
+          <br />
+          Thứ Hai đến Thứ Bảy
+          <br />
+          (trừ các ngày lễ):
+          <br />
+          8:00 đến 19:00
+          <br />
+          (GMT+1)
+        </p>
+      </div>
+      <div class="Vie">
+        <h3>VIỆT NAM</h3>
+        <p>
+          HOTLINE: +84 096 8686668
+          <br />
+          Thứ Hai đến Chủ Nhật
+          <br />
+          (trừ các ngày lễ):
+          <br />
+          8:00 đến 19:00
+          <br />
+          (GMT+7)
+        </p>
+      </div>
+    </div>
+    <div class="d2">
+      <div class="jp">
+        <h3>NHẬT BẢN</h3>
+        <p>
+          HOTLINE: +81 093 6668001
+          <br />
+          Thứ Hai đến Chủ Nhật
+          <br />
+          (trừ các ngày lễ):
+          <br />
+          8:00 đến 19:00
+          <br />
+          (GMT+9)
+        </p>
+      </div>
+      <div class="cn">
+        <h3>TRUNG QUỐC</h3>
+        <p>
+          HOTLINE: +86 051 9597282
+          <br />
+          Thứ Hai đến Chủ Nhật
+          <br />
+          (trừ các ngày lễ):
+          <br />
+          8:00 đến 19:00
+          <br />
+          (GMT+8)
+        </p>
+      </div>
+    </div>
+    <div class="d2">
+      <div class="jp">
+        <h3>BẮC MỸ</h3>
+        <p>
+          HOTLINE: +1 332 1925678
+          <br />
+          Thứ Hai đến Thứ Bảy
+          <br />
+          (trừ các ngày lễ):
+          <br />
+          8:00 đến 19:00
+          <br />
+          (GMT-5)
+        </p>
+      </div>
+      <div class="cn">
+        <h3>Ả RẬP </h3>
+        <p>
+          HOTLINE: 966 966 9698386
+          <br />
+          Thứ Hai đến Thứ Bảy
+          <br />
+          (trừ các ngày lễ):
+          <br />
+          8:00 đến 19:00
+          <br />
+          (GMT+3)
+        </p>
+      </div>
+    </div>
+    <div class="messfull">
+        <div class="mess">
+          <div>
+          <h2>ĐỂ LẠI LỜI NHẮN</h2>
+          <br />
+          <p class="send">
+            Nếu bạn có bất kỳ câu hỏi hoặc yêu cầu nào, hãy để lại lời nhắn cho Toyota. Đội ngũ chăm sóc khách hàng luôn sẵn sàng hỗ trợ và giải đáp mọi thắc mắc của bạn. Bạn có thể liên hệ trực tiếp qua hotline, email, hoặc điền thông tin vào form liên hệ trên website chính thức của Toyota. Chúng tôi cam kết phản hồi nhanh chóng và mang đến dịch vụ tốt nhất để đáp ứng nhu cầu của bạn. Toyota luôn đồng hành cùng khách hàng trong mọi hành trình.
+          </p>
+        </div>
+          <div class="messpic">
+            <img
+              src="images/toyota_ChooseImageMobile.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+          <!-- Icon hình tròn với dấu cộng -->
+          <div class="icon-container" id="toggleForm">
+            <div class="circle-icon">
+              <span class="plus">+</span>
+            </div>
+            <span class="message-label">Để lại lời nhắn</span>
+          </div>
+
+          <!-- Form bị ẩn ban đầu -->
+          <form id="messageForm" class="message-form" style="display: none">
+            <div class="radio-container">
+              <label>Bạn đã từng/đang sở hữu xe mua từ TTBD chưa ?</label>
+              <div>
+                <input type="radio" id="yes" name="customer" value="Yes" />
+                <label for="yes" class="circle-radio">Đã từng</label>
+                <input type="radio" id="no" name="customer" value="No" />
+                <label for="no" class="circle-radio">Chưa từng</label>
+              </div>
+            </div>
+
+            <div class="radio-container">
+              <label>Danh xưng *</label>
+              <div>
+                <input type="radio" id="mr" name="salutation" value="Mr" />
+                <label for="mr" class="circle-radio">Ông</label>
+                <input type="radio" id="miss" name="salutation" value="Miss" />
+                <label for="miss" class="circle-radio">Bà</label>
+              </div>
+            </div>
+
+            <!-- Tách Name và Phone Number thành một class riêng -->
+            <div class="input-container">
+              <div class="name-phone">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Họ và Tên"
+                  required
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Số điện thoại"
+                  required
+                />
+              </div>
+            </div>
+            <!-- Phần thêm Email -->
+<div class="input-container">
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Email"
+    required
+  />
+</div>
+<!-- Phần thêm Mẫu xe muốn tư vấn -->
+<div class="input-container">
+  <input
+    type="text"
+    id="car-model"
+    name="car-model"
+    placeholder="Mẫu xe muốn tư vấn"
+    required
+  />
+</div>
+
+
+            <!-- Phần Message xuống dòng -->
+            <div class="message">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Câu hỏi và lời nhắn"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit">Gửi</button>
+          </form>
+        </div>
+      </div>
+    
+    
+    <footer class="footer">
+     <p> Bản quyền © 2024 TTBD. Mọi quyền lợi được bảo lưu.
+<br>
+Chúng tôi cam kết cung cấp thông tin chính xác về các sản phẩm và dịch vụ.      
+  <br>
+  Lưu ý: Mọi hành vi sao chép, sử dụng nội dung từ website mà không có sự đồng ý bằng văn bản đều bị coi là vi phạm bản quyền.
+        <br>
+        Mã số thuế: 6686688386.</p>
+    </footer>
+</div>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
