@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang web bán xe hơi chuyên nghiệp, cung cấp các dòng xe phổ biến với các ưu đãi hấp dẫn">
+    <title>Trang chủ - Đại lý ô tô</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="https://i.ibb.co/zNvRYW0/no-background-logo.png" alt="logo"></a>
+      <button class="navbar-toggler" id="toggleButton">
+        &#9776; <!-- Hamburger icon -->
+      </button>
+      <div class="offcanvas" id="offcanvasMenu">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Thông tin chi tiết</h5>
+          <button type="button" class="btn-close" id="closeButton">&times;</button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="inventory.html" id="productCategoryLink">Danh mục sản phẩm</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownToggle" role="button">
+                Thêm
+              </a>
+              <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a class="dropdown-item" href="services.html">Dịch vụ</a></li>
+                <li><a class="dropdown-item" href="about.html">Về chúng tôi</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="contact.html">Liên hệ</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="search-form">
+            <input type="search" placeholder="Search" aria-label="Search">
+            <button class="btn-search" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Banner -->
+    <div class="carousel">
+      <!-- Slide 1 -->
+      <div class="carousel-slide active">
+          <video autoplay muted loop playsinline>
+              <source src="https://www.toyota.com/content/dam/toyota/homepage/tdr-marquee/2025/video/SIE_MY25_LCH_Woodland_TCOM_HPMarquee_desktop_TYTW2737000H.mp4?wid=1919" type="video/mp4">
+          </video>
+          <div class="carousel-content">
+              <h1>Đam Mê Ô Tô</h1>
+              <p>Khám phá thế giới ô tô với những mẫu xe đẹp, mạnh mẽ và hiện đại. Chúng tôi mang đến cho bạn những lựa chọn hoàn hảo để thỏa mãn đam mê lái xe.</p>
+          </div>
+      </div>
+  
+      <!-- Slide 2 -->
+      <div class="carousel-slide">
+        <video autoplay muted loop playsinline>
+          <source src="https://www.toyota.com/content/dam/toyota/homepage/tdr-marquee/2025/video/G86_MY25_Homepage_Marquee_TCOM_Desktop1920x796_TYCK2990000H.mp4?wid=1919" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+          <div class="carousel-content">
+              <h1>An Toàn Tối Đa</h1>
+              <p>Chúng tôi cam kết cung cấp những chiếc xe an toàn nhất trên thị trường. Tìm hiểu về công nghệ tiên tiến giúp bảo vệ bạn và gia đình trong mỗi chuyến đi.</p>
+          </div>
+      </div>
+  
+      <!-- Slide 3 -->
+      <div class="carousel-slide">
+          <video autoplay muted loop playsinline>
+              <source src="https://www.toyota.com/content/dam/toyota/homepage/tdr-marquee/2025/video/COR_MY25_SkateLoop_TCOM_ENG_TDRHPMarqueeDeskTab1920x796fs5mb_TYCK2945000H.mp4?wid=1919" type="video/mp4">
+          </video>
+          <div class="carousel-content">
+              <h1>Giá Trị Tốt Nhất</h1>
+              <p>Tìm kiếm chiếc xe mơ ước với mức giá hợp lý. Chúng tôi mang đến những ưu đãi hấp dẫn và dịch vụ khách hàng tận tâm để đảm bảo sự hài lòng của bạn.</p>
+          </div>
+      </div>
+  
+      <!-- Slide 4 -->
+      <div class="carousel-slide">
+        <video autoplay muted loop playsinline>
+          <source src="https://www.toyota.com/content/dam/toyota/homepage/tdr-marquee/2025/video/G86_MY25_Homepage_Marquee_TCOM_Desktop1920x796_TYCK2990000H.mp4?wid=1919" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+          <div class="carousel-content">
+              <h1>Dịch Vụ Chăm Sóc Khách Hàng</h1>
+              <p>Chúng tôi không chỉ bán xe, mà còn chăm sóc bạn. Đội ngũ chuyên viên tư vấn luôn sẵn sàng hỗ trợ bạn trong mọi nhu cầu, từ chọn xe đến bảo trì sau bán hàng.</p>
+          </div>
+      </div>
+  
+      <div class="carousel-control prev" onclick="prevSlide()">&#10094;</div>
+      <div class="carousel-control next" onclick="nextSlide()">&#10095;</div>
+  </div>
+  
+  <div class="carousel-indicators">
+      <span class="carousel-indicator active" onclick="setSlide(0)"></span>
+      <span class="carousel-indicator" onclick="setSlide(1)"></span>
+      <span class="carousel-indicator" onclick="setSlide(2)"></span>
+      <span class="carousel-indicator" onclick="setSlide(3)"></span> 
+  </div>
+
+
+    <!-- Danh mục nổi bật -->
+    <section class="section">
+      <h2>GIÁ TRỊ CỐT LÕI CỦA THƯƠNG HIỆU</h2>
+  </section>
+  
+  <div class="content-container">
+      <div class="text-content">
+          <h3>TRẢI NGHIỆM LÁI CHÂN THỰC</h3>
+          <p>
+              Khoang lái Toyota thế hệ mới với thiết kế công thái học, nổi bật là vô lăng nhỏ gọn và linh hoạt, đảm bảo sự tiện nghi và thoải mái khi cầm lái. Đằng sau vô lăng, người điều khiển hoàn toàn tập trung vào việc tận hưởng niềm vui lái xe.
+          </p>
+          <a href="driveschedule.html" class="cta-button">ĐẶT LỊCH LÁI THỬ</a>
+      </div>
+  
+      <div class="car-image">
+          <img src="images/image-screen-index.jpg" alt="New 408 Car">
+      </div>
+  </div>
+  
+    <!-- Chương trình khuyến mãi -->
+    <h2 style="font-size: 30px; text-align: center; margin: 30px 0;">CHƯƠNG TRÌNH KHUYẾN MÃI</h2>
+    <section class="promotions">
+        <div class="promotion-item">
+            <img src="https://i.ibb.co/1R0kJrG/promo1.jpg" alt="Ưu đãi 1">
+            <p>Giảm giá lên đến 20% cho mẫu xe mới.</p>
+        </div>
+
+        <div class="promotion-item">
+          <img src="https://i.ibb.co/QD906vr/toyota-exchange.jpg" alt="Ưu đãi 1">
+          <p>Thu xe cũ đổi xe mới.</p>
+        </div>
+
+        <div class="promotion-item">
+          <img src="https://i.ibb.co/nzmGHLL/toyota-fest.jpg" alt="Ưu đãi 1">
+          <p>Toyota festival.</p>
+        </div>
+
+        <div class="promotion-item">
+          <img src="https://i.ibb.co/8zfjyrX/toyota-tour.jpg" alt="Ưu đãi 1">
+          <p>Toyota fest.</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Đại lý ô tô. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

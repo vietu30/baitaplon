@@ -1,0 +1,1323 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Navbar */
+
+.navbar {
+  background-color: #343a40;
+  padding: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  color: white;
+  z-index: 3;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.container-fluid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img{
+  width: 100px;
+}
+
+.navbar-brand{
+  height: 52.75px;
+}
+
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.offcanvas {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #343a40;
+  transition: right 0.3s ease-in-out;
+  color: white;
+  padding: 1rem;
+}
+
+.offcanvas.open {
+  right: 0;
+}
+
+.offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0.5rem 0;
+}
+
+.nav-item a:hover {
+  width: 100%;
+  letter-spacing: 3px;
+  transition-duration: 0.5s;
+}
+
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  content: " ▼";
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #343a40;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  color: #e9ecef;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #495057;
+  color: white;
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.search-form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.search-form input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #6c757d;
+}
+
+.btn-search {
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: #218838;
+}
+
+/*--------------------------------------------------------------HẾT NAV-BAR CỦA BẰNG-------------------------------------------------------------*/
+
+/* Điều chỉnh nội dung phía dưới navbar */
+body {
+  margin-top: 60px; /* Chừa không gian phía trên cho navbar cố định */
+  overflow-y: scroll;
+}
+
+/* Banner */
+/*-------------------------------------------------------------CAROUSEL CỦA BẰNG-----------------------------------------------------------------*/
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 80vh; 
+}
+
+.carousel-slide {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  color: white;
+  max-width: 500px;
+  z-index: 2; }
+
+.carousel-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.carousel-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.carousel-content .cta-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.carousel-content .cta-button:hover {
+  background-color: #0056b3;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+.carousel-control.prev {
+  left: 20px;
+}
+.carousel-control.next {
+  right: 20px;
+}
+
+.carousel-indicators {
+  position: relative;
+  margin: 30px 0px 50px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-indicator {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+  background-color: #007bff;
+}
+/* -----------------------------------------------------HẾT CAROUSEL CỦA BẰNG------------------------------------------------------------------- */
+
+/* Thanh tìm kiếm */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-bar button:hover {
+  background-color: #555;
+}
+
+/* Featured categories */
+/*--------------------------------------------------ẢNH MÀU XANH CỦA BẰNG------------------------------------------------------------------------*/
+.section {
+  text-align: center;
+  color: #000;
+  background-color: white z;
+}
+.section h2 {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 70px 0px 20px 0px;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), 
+              url('./image-screen-index.jpg') center/cover no-repeat;
+  color: white;
+  height: 700px;
+}
+
+
+.text-content {
+  margin-left: 100px;
+  max-width: 30%;
+  padding-right: 20px;
+}
+.text-content h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+
+.car-image {
+  max-width: 40%;
+}
+.car-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/*-------------------------------------------------HẾT ẢNH MÀU XANH CỦA BẰNG------------------------------------------------------------------------*/
+/*-----------------------------------------------------------Promotions CỦA BẰNG-----------------------------------------------------------------*/
+.promotions {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    white-space: nowrap; /* Đảm bảo các phần tử không xuống hàng */
+}
+
+.promotions h2 {
+    font-size: 3em; /* Tăng kích thước tiêu đề */
+    margin-bottom: 20px;
+}
+
+.promotion-item {
+    display: inline-block;
+    width: 600px; /* Tăng chiều rộng để ảnh lớn hơn */
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+.promotion-item img {
+    width: 100%;
+    max-width: 600px; /* Đặt giới hạn lớn hơn cho ảnh */
+    height: 270px;
+    border-radius: 10px;
+}
+
+.promotion-item p {
+    font-size: 1.5em; /* Tăng kích thước chữ */
+    margin-top: 10px;
+}
+
+/* Customer reviews */
+.customer-reviews {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.customer-reviews h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.review {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+
+/*-----------------------------------------------------------------INVENTORY.HTML--------------------------------------------------------------- */
+/* Vehicle list */
+
+.vehicle-list {
+  padding: 50px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Tạo 4 cột cố định */
+  gap: 20px; /* Khoảng cách giữa các thẻ */
+}
+
+.vehicle-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: left;
+  height: 100%; /* Chiều cao thẻ xe */
+}
+
+.vehicle-item:hover {
+  box-shadow: 0 2px 7px gray;
+  transition: 100ms ease-in-out;
+}
+
+.vehicle-item h3 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.vehicle-item p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.vehicle-item .price .tsrp {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.vehicle-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.actions button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.smart-price {
+  color: red;
+  font-size: 1.3em;
+}
+
+.vehicle-item button:hover {
+  background-color: rgba(146, 23, 23, 0.948);
+}
+
+.list-img {
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+/*-------------------------------------------------------------HẾT LIST SẢN PHẨM---------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------ABOUT US CỦA ĐẠT----------------------------------------------------------------------------------*/
+/* About us section */
+.about-us {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.about-us h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-us p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.about-us {
+  background-image: url("images/xemec.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.content-about {
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.content-about h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  line-height: 1.3em;
+}
+
+.content-about h1 span {
+  color: #e8413e;
+}
+
+.content-about p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.call-btn,
+.contact-btn {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.call-btn {
+  background-color: #e8413e;
+}
+
+.call-btn:hover {
+  background-color: #d73532;
+}
+
+.contact-btn {
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+.contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.team-member-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.member-card {
+  display: flex;
+  max-width: 1000px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.member-card img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.member-info {
+  padding: 20px;
+  line-height: 1.6em;
+}
+
+.title {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #e8413e;
+  margin-bottom: 15px;
+}
+
+.member-info p {
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #333;
+}
+
+.member-info p:last-child {
+  margin-bottom: 0;
+}
+/*---------------------------------------------------------HẾT PHẦN CỦA ĐẠT------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------BỘ LỌC Ở IINVENTORY-----------------------------------------------------------------*/
+/* Filter section */
+.filter-section {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+}
+
+.filter-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.filter-section form {
+  display: inline-block;
+}
+
+.filter-section label {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+
+.filter-section select,
+.filter-section input {
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.filter-section button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-section button:hover {
+  background-color: #555;
+}
+
+
+/*------------------------------------------------------------------------FOOTER---------------------------------------------------------------------*/
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+/*------------------------------------------------------------------------HẾT FOOTER---------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------CHI TIẾT TỪNG XE---------------------------------------------------------------------*/
+/* Chi tiết xe */
+.vehicle-detail-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.vehicle-header h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.vehicle-header p {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.vehicle-gallery {
+  margin: 20px 0;
+}
+
+.vehicle-gallery .main-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.image-thumbnails img {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image-thumbnails img:hover {
+  transform: scale(1.1);
+}
+
+.vehicle-description {
+  margin: 30px 0;
+}
+
+.vehicle-description p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.vehicle-specs table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.vehicle-specs td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.vehicle-finance,
+.vehicle-test-drive {
+  margin: 40px 0;
+}
+
+button {
+  background-color: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff6347;
+}
+
+.vehicle-gallery {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.main-image-container {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.main-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Giữ tỷ lệ ảnh nhưng cắt phần dư thừa */
+  border-radius: 10px;
+  transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà */
+}
+
+.image-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image-thumbnails img {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-thumbnails img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.vehicle-list button a {
+  color: white;
+}
+
+/*--------------------------------------------------------------HẾT CHI TIẾT TỪNG XE---------------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------------CONTACT.HTML---------------------------------------------------------------------*/
+/* Contact Section */
+.contact-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.contact-section p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.contact-form-container {
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.contact-info {
+  margin-top: 50px;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.contact-info p {
+  font-size: 18px;
+  color: #555;
+}
+
+.map-container {
+  margin-top: 20px;
+  width: 100%;
+  height: 400px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+
+/*-------------------------------------------------------------HẾT PHẦN CONTACT.HTML-------------------------------------------------------------*/
+
+/*------------------------------------------------------------ĐÉO BIẾT PHẦN NÀO------------------------------------------------------------------*/
+/* Images Slider */
+.container {
+  margin: 100px auto;
+  width: 70%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container img {
+  height: 100%;
+  width: 30%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid black;
+  transition: ease-in-out 500ms;
+}
+
+.container img:hover {
+  width: 100%;
+}
+
+.container div {
+  width: 200px;
+}
+/*------------------------------------------------HẾT ĐÉO BIẾT PHẦN NÀO---------------------------------------------------*/
+/* Description */
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  .banner h1 {
+    font-size: 2.5em;
+  }
+
+  .banner p {
+    font-size: 1.2em;
+  }
+
+  .search-bar input {
+    width: 80%;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  .vehicle-list h2 {
+    font-size: 2em;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .banner h1 {
+    font-size: 1.8em;
+  }
+
+  .banner p {
+    font-size: 1em;
+  }
+
+  .vehicle-item img {
+    height: 120px;
+  }
+
+  .vehicle-list h2 {
+    font-size: 1.8em;
+  }
+}
+
+/*------------------------------------------------------SERVICE CỦA BẰNG BÉO-------------------------------------------------------------------*/
+/* Services */
+
+.services-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.services-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Service Grid Layout */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual Service Item */
+.service-item {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Service Icon */
+.service-icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+/* Service Title */
+.service-item h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Service Description */
+.service-item p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Learn More Link */
+.learn-more {
+  display: inline-block;
+  color: #0066cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .offcanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .offcanvas.open {
+    transform: translateX(0);
+  }
+}
+
+
+
+/*-------------------------------------------------------------ĐÉO BIẾT PHẦN NÀO-----------------------------------------------------------------*/
+/* Khac */
+
+.logo img {
+  margin-top: 1px;
+  width: 120px;
+  padding-right: 20px;
+  margin-left: 100px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li {
+  position: relative;
+  margin-top: 13px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 10px;
+}
+
+.nav-links li a:hover {
+  color: #e74c3c;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-image: url("images/background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Lớp phủ màu đen với độ trong suốt */
+}
+
+.content-service {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-section h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 30px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Nút cuộn xuống */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  opacity: 0.8; /* Trong suốt để không ảnh hưởng video */
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scroll-down:hover {
+  opacity: 1; /* Hiệu ứng khi rê chuột */
+}
+
+.scroll-down .arrow {
+  display: block;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.scroll-down p {
+  margin: 0;
+}
+
+
+.ad-container{
+  width: 100%;
+  background-color: #2b2e42;
+}
+
+.content-container{
+  display: flex;
+  width: 100%;
+}
+.column1{
+  width: calc(100% - 40% - 50px);
+  padding:0px 25px ;
+  color: white;
+}
+.pic-loader{
+  width: 40%;
+  display: flex;
+}
+
+
+
+.overall1{
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.car-inspect{
+  width: calc(100% - 50%);
+}
+
+.car-inspect .main-image-container{
+
+  width: 100%;
+  border-radius: 5%;
+}
+
+.car-inspect h3, .car-description h3{
+  font-size:30px ;
+  border: 3px;
+}
+
+.car-description{
+  width: 50%;
+  border-radius: 3%;
+  transition:   background-color 0.2s, color 0.2s, width 0.2s ;
+}
+
+.car-description:hover{
+  background-color: #343a40;
+  color: white;
+  width: 60%;
+  
+}
+
+hr{
+  margin: 30px 0px;
+}
+
+.footer p{
+  float: left;
+  text-align: left;
+  margin-left: 130px;
+}
+.footer {
+  background-color: #333; /* Màu nền cho footer */
+  color: white; /* Màu chữ */
+  text-align: center; /* Canh giữa nội dung */
+  padding: 20px 0; /* Khoảng cách trên và dưới nội dung */
+  position: relative; /* Đảm bảo footer không bị chồng lên nội dung */
+  width: 100%; /* Chiều rộng chiếm toàn bộ màn hình */
+  bottom: 0; /* Đặt footer ở vị trí dưới cùng */
+}
